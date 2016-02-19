@@ -23,6 +23,12 @@
     state: "{{ (upgrade_ceph_packages|bool) | ternary('latest','present') }}"
   when: not ceph_stable_rh_storage
 
+- name: install ceph-test
+  yum:
+    name: ceph-test
+    state: "{{ (upgrade_ceph_packages|bool) | ternary('latest','present') }}"
+  when: not ceph_stable_rh_storage
+
 - name: install distro or red hat storage ceph mon
   yum:
     name: "{{ item }}"
