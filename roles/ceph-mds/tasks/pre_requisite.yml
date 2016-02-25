@@ -10,7 +10,7 @@
 - name: copy mds bootstrap key
   copy:
     src: "{{ fetch_directory }}/{{ fsid }}{{ item.name }}"
-    dest: "{{ item }}"
+    dest: "{{ item.name }}"
     owner: "{{ key_owner }}"
     group: "{{ key_group }}"
     mode: "{{ key_mode }}"
